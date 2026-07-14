@@ -43,9 +43,10 @@ export function SiteFooter() {
           <div>
             <h4 className="text-sm font-medium tracking-widest text-gold uppercase">Hours</h4>
             <ul className="mt-5 space-y-2 text-sm text-cream/80">
-              <li className="flex justify-between"><span>Mon – Fri</span><span>9:00 – 19:00</span></li>
-              <li className="flex justify-between"><span>Saturday</span><span>9:00 – 17:00</span></li>
-              <li className="flex justify-between"><span>Sunday</span><span>By appointment</span></li>
+              <li className="flex justify-between"><span>Monday – Thursday</span><span>10:00 AM - 4:00 PM</span></li>
+              <li className="flex justify-between"><span>Friday</span><span>By Appointment</span></li>
+              <li className="flex justify-between"><span>Saturday</span><span>11:00 AM – 4:00 PM</span></li>
+              <li className="flex justify-between"><span>Sunday</span><span>By Appointment</span></li>
             </ul>
             <a href="https://www.instagram.com/aureaskin_ke?igsh=ZGR1ZGZydmlodDF0" target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm text-cream/80 hover:text-gold">
               <Instagram className="h-4 w-4" /> @aureaskin_ke
