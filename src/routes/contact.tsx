@@ -69,8 +69,9 @@ function Contact() {
                 <div>
                   <div className="font-medium text-emerald-deep">Hours</div>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                    <li>Mon – Fri · 9:00 – 19:00</li>
-                    <li>Saturday · 9:00 – 17:00</li>
+                    <li>Mon – Thur · 10:00 – 17:00</li>
+                    <li>Saturday · 10:00 – 17:00</li>
+                    <li>Friday . By appointment</li>
                     <li>Sunday · By appointment</li>
                   </ul>
                 </div>
