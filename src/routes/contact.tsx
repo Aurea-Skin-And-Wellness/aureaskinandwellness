@@ -79,10 +79,16 @@ function Contact() {
             </div>
           </aside>
 
+          <iframe name="hidden_iframe" id="hidden_iframe" style={{display: "none"}} />
           <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
+            action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScU8r5es2_PjWWFUsxg4w3Ne5_Z7GNbCephlvJcqIAGBdtzUg/formResponse"//Form Action URL
+            method="POST"
+            target="hidden_iframe"
+            onSubmit={()=> {
+              setTimeout(() => {
+                setSent(true);
+                form.reset();
+              }, 100);
             }}
             className="rounded-2xl border border-border bg-card p-7 shadow-sm sm:p-9"
           >
@@ -95,22 +101,28 @@ function Contact() {
                 <p className="mt-3 max-w-sm text-sm text-muted-foreground">
                   Thank you. Our client care coordinator will reach out within one business day to confirm your appointment.
                 </p>
+                <button
+                  type="button"
+                  onClick={() => setSent(false)}
+                  className="mt-8 text-sm font-medium text-emerald-deep underline transition hover:text-emerald"
+                >Submit Another Request</button>
               </div>
             ) : (
               <>
                 <h2 className="font-display text-2xl text-emerald-deep sm:text-3xl">Request a consultation</h2>
-                <p className="mt-2 text-sm text-muted-foreground">Tell us a little about your goals.</p>
+                <p className="mt-2 text-sm text-muted-foreground">Tell us a little about you.</p>
 
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  <Field label="Full name" name="name" required />
-                  <Field label="Phone" name="phone" type="tel" required />
+                  <Field label="Full name" name="entry.330465446" required />
+                  <Field label="Phone" name="entry.2048710703" type="tel" required />
                 </div>
-                <div className="mt-4">
-                  <Field label="Email" name="email" type="email" required />
+                <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                  <Field label="Email" name="entry.645373634" type="email" required />
+                  <Field label="Date" name="entry.901117154" type="date" required />
                 </div>
                 <div className="mt-4">
                   <label className="block text-sm font-medium text-emerald-deep">Service of interest</label>
-                  <select className="mt-2 w-full rounded-lg border border-input bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/40">
+                  <select name="entry.389666746" className="mt-2 w-full rounded-lg border border-input bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/40">
                     <option>Skin Discovery Assessment</option>
                     <option>Healthy Ageing Assessment</option>
                     <option>Facial Therapy</option>
@@ -123,9 +135,10 @@ function Contact() {
                 <div className="mt-4">
                   <label className="block text-sm font-medium text-emerald-deep">Message</label>
                   <textarea
+                    name="entry.724466538"
                     rows={4}
                     className="mt-2 w-full rounded-lg border border-input bg-background px-4 py-3 text-sm focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/40"
-                    placeholder="Share your goals or questions"
+                    placeholder="[Optional] Share your goals or questions here"
                   />
                 </div>
                 <button
@@ -135,7 +148,7 @@ function Contact() {
                   Submit request
                 </button>
                 <p className="mt-3 text-center text-xs text-muted-foreground">
-                  By submitting you agree to be contacted about your enquiry.
+                  By submitting you agree to be contacted by Aurea.
                 </p>
               </>
             )}
